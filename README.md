@@ -13,35 +13,25 @@ yarn add @huluvu424242/liona-router
 bower install @huluvu424242/liona-router --save
 ```
 ## Usage
-### Javascript
-```javascript
-var feeds = require('@huluvu424242/liona-router');
-var feedContentJSON = feeds.getFeedData('https://www.tagesschau.de/xml/atom/');
-```
-```sh
-Output should be an response
-```
+Beispiel für die Verwendung in einer einfachen Stencil Webkomponente.
 ### TypeScript
-```typescript
-import { getFeedData } from '@huluvu424242/liona-router';
-console.log(getFeedData('https://www.zdf.de/rss/zdf/nachrichten'))
+```typescript jsx
+    {!this.route || this.route === "/" || this.route === "/index.html" || this.route === "/news" ? <honey-news-feed ref={(el) => {
+      // @ts-ignore
+      this.newsFeed = el as HTMLHoneyNewsFeedElement
+    }}/> : null}
+    {this.route === "/feeds" ? <honey-news-feeds ref={(el) => {
+      // @ts-ignore
+      this.feedAdministration = el as HTMLHoneyNewsFeedsElement
+    }
+    }/> : null}
+    {this.route === "/statistic" ? <honey-news-statistic/> : null}
+    {this.route === "/about" ? <About/> : null}
 ```
 ```sh
 Output should be an response
-```
-### AMD
-```javascript
-define(function(require,exports,module){
-  var feedsReader = require('@huluvu424242/liona-router');
-});
 ```
 ## Test 
 ```sh
 npm run test
-```
-## Demo 
-```sh
-npm run start
-or
-node demo/server.js
 ```
