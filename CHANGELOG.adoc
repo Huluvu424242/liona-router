@@ -23,7 +23,7 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 === Added
 
-* project setup
+* project setup (ony for development alpha unstable)
 
 === Changed
 
