@@ -41,7 +41,8 @@ public connectedCallback() {
     this.siteBasePath = this.hostElement.getAttribute("site-basepath") || "/";
     /// base initialisieren
     const curLocation:string = window.location.origin;
-    const isLocal:boolean = curLocation.startsWith("http://localhost") || curLocation.startsWith("https://localhost");
+    const isLocal:boolean = curLocation.startsWith("http://localhost") 
+                         || curLocation.startsWith("https://localhost");
     const basePath = isLocal? this.localBasePath:this.siteBasePath;
     router.setRoutenPrefix(basePath);
     // route initialisieren
