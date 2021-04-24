@@ -1,11 +1,19 @@
-import {getFeedData, getFeedDataFor, getFeeds, getRankedFeeds, unsubscribeFeedFor} from "./feeds/feeder";
-import {addCORSHeader} from "./network/cors";
+import {
+    activateWindowListener,
+    addRoute,
+    navigateToRoute,
+    router,
+    setBasePath,
+    setRouterSlotElement,
+    subscribeRoute
+} from "./routing/SimpleRouter";
 
 export {
-    addCORSHeader,
-    unsubscribeFeedFor,
-    getFeedData,
-    getFeedDataFor,
-    getFeeds,
-    getRankedFeeds
+    router,
+    activateWindowListener,
+    subscribeRoute,
+    setBasePath,
+    setRouterSlotElement,
+    addRoute,
+    navigateToRoute
 }

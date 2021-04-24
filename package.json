@@ -1,11 +1,11 @@
 {
   "name": "@huluvu424242/liona-router",
-  "version": "2.2.0",
-  "description": "Modul to realize an REST endpoint to receive news feed data",
+  "version": "0.0.1",
+  "description": "Modul to realize an simple router for SPA.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "index.d.ts",
-  "unpkg": "dist/honey-news/honey-news.js",
+  "unpkg": "dist/liona-router/liona-router.js",
   "files": [
     "dist/"
   ],
