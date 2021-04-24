@@ -1,11 +1,11 @@
 {
-  "name": "@huluvu424242/liona-feeds",
-  "version": "2.2.0",
-  "description": "Modul to realize an REST endpoint to receive news feed data",
+  "name": "@huluvu424242/liona-router",
+  "version": "0.0.1",
+  "description": "Modul to realize an simple router for SPA.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "index.d.ts",
-  "unpkg": "dist/honey-news/honey-news.js",
+  "unpkg": "dist/liona-router/liona-router.js",
   "files": [
     "dist/"
   ],
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Huluvu424242/liona-feeds.git"
+    "url": "git+https://github.com/Huluvu424242/liona-router.git"
   },
   "keywords": [
     "liona-news",
@@ -26,9 +26,9 @@
   "author": "Huluvu424242 (Thomas Schubert)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Huluvu424242/liona-feeds/issues"
+    "url": "https://github.com/Huluvu424242/liona-router/issues"
   },
-  "homepage": "https://github.com/Huluvu424242/liona-feeds#readme",
+  "homepage": "https://github.com/Huluvu424242/liona-router#readme",
   "engines": {
     "node": "14.15.0"
   },

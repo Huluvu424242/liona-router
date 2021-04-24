@@ -22,7 +22,7 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 === Added
 
-* https://github.com/Huluvu424242/liona-feeds/issues/10[issue 10] add statistic module
+* https://github.com/Huluvu424242/liona-router/issues/10[issue 10] add statistic module
 
 === Changed
 
@@ -36,7 +36,7 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 === Added
 
-* https://github.com/Huluvu424242/liona-feeds/issues/7[issue 7] cleanup realisiert
+* https://github.com/Huluvu424242/liona-router/issues/7[issue 7] cleanup realisiert
 
 ** Alle 30 Minuten läuft der Cleanup Job und prüft
 ** ob ein Feed länger als 60 Minuten nicht mehr angefragt wurde
@@ -54,8 +54,8 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 === Added
 
-* https://github.com/Huluvu424242/liona-feeds/issues/3[issue 3] support of uuid
-* https://github.com/Huluvu424242/liona-feeds/issues/4[issue 4] addCORSHeader function added
+* https://github.com/Huluvu424242/liona-router/issues/3[issue 3] support of uuid
+* https://github.com/Huluvu424242/liona-router/issues/4[issue 4] addCORSHeader function added
 
 === Changed
 
