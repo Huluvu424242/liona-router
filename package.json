@@ -33,16 +33,9 @@
     "node": "14.15.0"
   },
   "dependencies": {
-    "rxjs": "6.6.3",
-    "rxjs-operators": "1.1.3",
-    "feedme": "2.0.2",
-    "axios": "0.21.1",
-    "object-hash": "2.1.1"
+    "rxjs": "6.6.3"
   },
   "devDependencies": {
-    "@types/feedme": "^1.0.0",
-    "@types/object-hash": "^1.3.4",
-    "express": "4.17.1",
     "typescript": "4.1.5"
   }
 }

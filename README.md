@@ -5,7 +5,7 @@
 ![Keybase BTC](https://img.shields.io/keybase/btc/huluvu424242)
 
 # liona-router
-A Node.js module that provided an REST endpoint to receive news feeds.
+Modul to realize an simple router for SPA.
 ## Installation 
 ```sh
 npm install @huluvu424242/liona-router --save
