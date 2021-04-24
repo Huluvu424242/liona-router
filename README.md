@@ -51,7 +51,7 @@ public connectedCallback() {
     }else{
       this.route = window.location.pathname.replace(basePath, "");
     }
-    this.routerSubscription = router.getRouteListener().subscribe((route: string) => {
+    this.routerSubscription = subscribeRoute((route: string) => {
         this.route = route;
       },
       (error) => {
