@@ -44,6 +44,9 @@ public connectedCallback() {
     const isLocal:boolean = curLocation.startsWith("http://localhost") 
                          || curLocation.startsWith("https://localhost");
     const basePath = isLocal? this.localBasePath:this.siteBasePath;
+    if(basePath!=="/") {
+      router.setBasePath(basePath);
+    }
     router.setRoutenPrefix(basePath);
     // route initialisieren
     if (basePath === "/") {
