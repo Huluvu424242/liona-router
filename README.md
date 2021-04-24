@@ -16,17 +16,75 @@ bower install @huluvu424242/liona-router --save
 Beispiel für die Verwendung in einer einfachen Stencil Webkomponente.
 ### TypeScript
 ```typescript jsx
-    {!this.route || this.route === "/" || this.route === "/index.html" || this.route === "/news" ? <honey-news-feed ref={(el) => {
-      // @ts-ignore
-      this.newsFeed = el as HTMLHoneyNewsFeedElement
-    }}/> : null}
-    {this.route === "/feeds" ? <honey-news-feeds ref={(el) => {
-      // @ts-ignore
-      this.feedAdministration = el as HTMLHoneyNewsFeedsElement
+@Component({
+  tag: "honey-news",
+  styleUrl: "AppShell.css",
+  assetsDirs: ['assets'],
+  shadow: true
+})
+export class AppShell {
+
+/**
+   * base of remote site
+   */
+  @Prop({reflect: true, attribute: "site-basepath"}) siteBasePath;
+  /**
+   * base of local site
+   */
+  @Prop({reflect: true, attribute: "local-basepath"}) localBasePath;
+  routerSubscription: Subscription = null;
+  @State() route: string = "";
+
+public connectedCallback() {
+    // attribute initialisieren wenn defaults notwendig
+    this.localBasePath = this.hostElement.getAttribute("local-basepath") || "/";
+    this.siteBasePath = this.hostElement.getAttribute("site-basepath") || "/";
+    /// base initialisieren
+    const curLocation:string = window.location.origin;
+    const isLocal:boolean = curLocation.startsWith("http://localhost") || curLocation.startsWith("https://localhost");
+    const basePath = isLocal? this.localBasePath:this.siteBasePath;
+    router.setRoutenPrefix(basePath);
+    // route initialisieren
+    if (basePath === "/") {
+      this.route = window.location.pathname;
+    }else{
+      this.route = window.location.pathname.replace(basePath, "");
     }
-    }/> : null}
-    {this.route === "/statistic" ? <honey-news-statistic/> : null}
-    {this.route === "/about" ? <About/> : null}
+    this.routerSubscription = router.getRouteListener().subscribe((route: string) => {
+        this.route = route;
+      },
+      (error) => {
+        console.error(error);
+      },
+      () => {
+        console.info("Router Subject' complete");
+      });
+  }
+
+  public disconnectedCallback() {
+    this.routerSubscription.unsubscribe();
+  }
+
+  public render() {
+    return (
+      <Host class="paper">
+
+        {!this.route || this.route === "/" || this.route === "/index.html" || this.route === "/news" ? <honey-news-feed ref={(el) => {
+          // @ts-ignore
+          this.newsFeed = el as HTMLHoneyNewsFeedElement
+        }}/> : null}
+        {this.route === "/feeds" ? <honey-news-feeds ref={(el) => {
+          // @ts-ignore
+          this.feedAdministration = el as HTMLHoneyNewsFeedsElement
+        }
+        }/> : null}
+        {this.route === "/statistic" ? <honey-news-statistic/> : null}
+        {this.route === "/about" ? <About/> : null}
+
+      </Host>
+    );
+  }
+}
 ```
 ```sh
 Output should be an response
